@@ -40,6 +40,9 @@
 		<div class="text-center"> <!-- text-center는 텍스트를 가운데로 -->
 			<h3> <%= tagline %> </h3>
 			<%
+			//1초에 한 번씩 현재시간 새로고침
+			response.setIntHeader("Refresh",1);
+			
 			Date today = new Date();
 			
 			SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
