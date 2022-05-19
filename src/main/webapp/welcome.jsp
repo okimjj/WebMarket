@@ -11,15 +11,8 @@
 	<title>Web Market</title>
 </head>
 <body>
-	<!-- bootstrap import 후 사용하는 class들. navbar는 상단의 메뉴바 -->
-	<nav class="navbar navbar-expand navbar-dark bg-dark">
-	<!-- class container는 해당 요소를 좌우로 중앙 정렬 -->
-	    <div class="container">
-	        <div class="navbar-header">
-	        	<a class="navbar-brand" href="./welcome.jsp">Home</a>
-	        </div>
-	    </div>
-	</nav>
+	<jsp:include page="menu.jsp"/>
+	
 
 	<%! //자바 코드를 실행하는 부분. <%!는 선언, <%는 일반 코드, <%=은 출력 영역으로 쓰인다.
 	//변수, method 선언
@@ -57,8 +50,6 @@
 	</div>
 
 
-	<footer class="container"> <!-- footer는 홈페이지 정보 저작권 정보 등이 담긴 사이트 하단 영역 -->
-		<p>&copy;WebMarket</p>
-	</footer>
+	<
 </body>
 </html>
