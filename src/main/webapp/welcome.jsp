@@ -2,6 +2,9 @@
     pageEncoding="UTF-8"%>
    <%@ page import="java.util.Date" %> <!-- 자바 date, SimpleDdateFormat 임포트 부분 -->
    <%@ page import="java.text.SimpleDateFormat" %>
+   <%@ page import= "java.util.List" %>
+   <%@ page import= "java.util.ArrayList" %>
+   <%@ page import= "dto.Product" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +14,7 @@
 	<title>Web Market</title>
 </head>
 <body>
-	<jsp:include page="menu.jsp"/>
+	<jsp:include page="menu.jsp"/> <!-- 상단 메뉴바 파일을 이 페이지에 포함시킨다. 상단 메뉴가 출력됨 -->
 	
 
 	<%! //자바 코드를 실행하는 부분. <%!는 선언, <%는 일반 코드, <%=은 출력 영역으로 쓰인다.
@@ -41,18 +44,29 @@
 			<h3> <%= tagline %> </h3>
 			<%
 			//1초에 한 번씩 현재시간 새로고침
-			response.setIntHeader("Refresh",1);
+			response.setIntHeader("Refresh",5);
 			
 			Date today = new Date();
 			
 			SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
 					
 			out.println("현재 접속시간: " + format.format(today));
+			
+			session.setAttribute("name", "김정재");
+			session.setAttribute("age", 23);
+			
+			List<String> food = new ArrayList<String>();
+			food.add("자장면");
+			food.add("라면");
+			food.add("탕수육");
+			
+			session.setAttribute("foods",food);
+			session.setMaxInactiveInterval(5);
 			%>
 		</div>
 	</div>
-
-
-	<
+	
+	<jsp:include page="footer.jsp"/>
+	
 </body>
 </html>

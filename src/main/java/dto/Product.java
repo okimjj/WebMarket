@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 //모델클래스
 //jsp에서는 자바 빈즈라고 부름(getter / setter,기본 생성자, Serializable)
+//getter/setter를 통해 데이터 전달을 맡음
 public class Product implements Serializable {
 
 	private static final long serialVersionUID = 2867748905925104542L;
@@ -17,7 +18,7 @@ public class Product implements Serializable {
 	private long unitsInStock;
 	private String condition;
 	
-	public Product() {};
+	public static void main() {};
 	
 	public Product(String productId, String name, int unitPrice) {
 		this.productId = productId;
